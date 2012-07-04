@@ -1,0 +1,52 @@
+{
+"data": {
+		"current_condition": [ {
+			"cloudcover": "50",
+			"humidity": "82",
+			"observation_time": "07:14 PM",
+			"precipMM": "0.1",
+			"pressure": "1015",
+			"temp_C": "14",
+			"temp_F": "57",
+			"visibility": "10",
+			"weatherCode": "116", 
+			"weatherDesc": [ {"value": "Partly Cloudy" } ],
+			"weatherIconUrl": [ {"value": "http:\/\/www.worldweatheronline.com\/images\/wsymbols01_png_64\/wsymbol_0002_sunny_intervals.png" } ],
+			"winddir16Point": "WNW",
+			"winddirDegree": "300",
+			"windspeedKmph": "19",
+			"windspeedMiles": "12"
+			} ],
+		"request": [ {"query": "Kiel, Germany", "type": "City" } ],
+		"weather": [
+					{"date": "2012-06-18",
+						"precipMM": "6.6",
+						"tempMaxC": "20",
+						"tempMaxF": "67",
+						"tempMinC": "10",
+						"tempMinF": "49",
+						"weatherCode": "386",
+						"weatherDesc": [ {"value": "Patchy light rain in area with thunder" } ],
+						"weatherIconUrl": [ {"value": "http:\/\/www.worldweatheronline.com\/images\/wsymbols01_png_64\/wsymbol_0016_thundery_showers.png" } ],
+						"winddir16Point": "ESE",
+						"winddirDegree": "320",
+						"winddirection": "ESE",
+						"windspeedKmph": "39",
+						"windspeedMiles": "24" },
+					{"date": "2012-06-19",
+					"precipMM": "0.7",
+					"tempMaxC": "18",
+					"tempMaxF": "64",
+					"tempMinC": "13",
+					"tempMinF": "56",
+					"weatherCode": "119",
+					"weatherDesc": [ {"value": "Cloudy" } ],
+					"weatherIconUrl": [ {"value": "http:\/\/www.worldweatheronline.com\/images\/wsymbols01_png_64\/wsymbol_0003_white_cloud.png" } ],
+					"winddir16Point": "SW",
+					"winddirDegree": "224",
+					"winddirection": "SW",
+					"windspeedKmph": "14",
+					"windspeedMiles": "9" }
+					]
+		}
+}

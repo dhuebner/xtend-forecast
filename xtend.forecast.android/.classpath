@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="lib" path="org.eclipse.xtext.xbase.lib_2.3.0.v201206120633.jar"/>
+	<classpathentry exported="true" kind="lib" path="guava-10.0.1.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>
