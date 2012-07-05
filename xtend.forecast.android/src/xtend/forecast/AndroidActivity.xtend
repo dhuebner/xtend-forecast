@@ -46,10 +46,9 @@ class AndroidActivity extends Activity {
         		button[ 
         			text = "Search"
         			onClickListener = [
-        				val jsonScript = Forecaster::forecast(searchField.text.toString).toString
-        				val data = new JSONObject(jsonScript).firstEntry("data")
+        				val JSONObject jsonObj = Forecaster::forecast(searchField.text.toString)
+        				val data = jsonObj.firstEntry("data")
         				val error = data.firstEntry("error")
-        				print(error)
         				if (error != null) {
         					infoText.text = error.getString("msg")
         					return
@@ -160,7 +159,7 @@ class AndroidActivity extends Activity {
 			interpolator = new DecelerateInterpolator()
 			fillAfter = true
 			fillEnabled = true
-			addAnimation(new RotateAnimation(0, degree, RELATIVE_TO_SELF, 0.5f, RELATIVE_TO_SELF, 0.5f) => [
+			addAnimation(new RotateAnimation(180, degree+180, RELATIVE_TO_SELF, 0.5f, RELATIVE_TO_SELF, 0.5f) => [
 				duration = 1500
 				fillAfter = true
 			])
