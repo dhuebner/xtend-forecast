@@ -42,13 +42,13 @@ class AndroidActivity extends Activity {
         contentView = new LinearLayout(this) => [
         	orientation = VERTICAL
         	row[
-        		searchField = text[text = "Kiel"].weight(1)
+        		text[ searchField = it text = "Kiel"].weight(1)
         		button[ 
         			text = "Search"
         			onClickListener = [
         				val jsonScript = Forecaster::forecast(searchField.text.toString).toString
-        				val data = new JSONObject(jsonScript).step("data")
-        				val error = data.step("error")
+        				val data = new JSONObject(jsonScript).firstEntry("data")
+        				val error = data.firstEntry("error")
         				print(error)
         				if (error != null) {
         					infoText.text = error.getString("msg")
@@ -60,18 +60,18 @@ class AndroidActivity extends Activity {
         	]
         	
         	row[
-        		infoText = label[ text = "Enter a city" ]
+        		label[ infoText = it text = "Enter a city" ]
         	]
         	
         	row[
-        		weatherImage = image[ ]
-        		forecastText = label[text = "... and hit search" textColor = Color::WHITE]
+        		image[ weatherImage = it]
+        		label[ forecastText = it text = "... and hit search" textColor = Color::WHITE]
         		backgroundColor = Color::parseColor("#93B7E4")
         	]
         	
         	row[
         		image[ imageDrawable = resources.getDrawable(R$drawable::ic_temp_2) ]
-        		tempText = label[ text = "?¡ - ?¡ C" ]
+        		label[ tempText = it text = "?¡ - ?¡ C" ]
         		backgroundColor = Color::WHITE
         	]
         	
@@ -85,15 +85,15 @@ class AndroidActivity extends Activity {
     }
 	
 	def private void loadValues(JSONObject data) {
-		val weather = data.step("weather")
+		val weather = data.firstEntry("weather")
 		// Info
-		infoText.text = '''Tomorrow in Çdata.step("request").getString("query")È'''
+		infoText.text = '''Tomorrow in Çdata.firstEntry("request").getString("query")È'''
 		// Image
-		val imageUrl = weather.step("weatherIconUrl").getString("value")
+		val imageUrl = weather.firstEntry("weatherIconUrl").getString("value")
 		weatherImage.setImageDrawable(new URL(imageUrl).asDrawable)
 		weatherImage.layoutParams = new LinearLayout$LayoutParams(windImage.width,windImage.height)
 		// Weather
-		forecastText.text =  weather.step("weatherDesc").getString("value")
+		forecastText.text =  weather.firstEntry("weatherDesc").getString("value")
 		// Temperature
 		tempText.text = '''Çweather.getString("tempMinC")È¡ - Çweather.getString("tempMaxC")È¡ C'''
 		// Wind
@@ -160,14 +160,14 @@ class AndroidActivity extends Activity {
 			interpolator = new DecelerateInterpolator()
 			fillAfter = true
 			fillEnabled = true
-			addAnimation(new RotateAnimation(180, degree, RELATIVE_TO_SELF, 0.5f, RELATIVE_TO_SELF, 0.5f) => [
+			addAnimation(new RotateAnimation(0, degree, RELATIVE_TO_SELF, 0.5f, RELATIVE_TO_SELF, 0.5f) => [
 				duration = 1500
 				fillAfter = true
 			])
 		])
 	}
 	
-	def JSONObject step(JSONObject jsonObj, String step) {
+	def JSONObject firstEntry(JSONObject jsonObj, String step) {
 		var Object retVal = null
 		var Object temp = jsonObj.opt(step)
 		switch temp {

@@ -21,6 +21,6 @@
 </listAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.vertx.java.deploy.impl.cli.VertxMgr"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="run xtend.forecast.server.WeatherForecastServer -cp /Applications/eclipse-forecast/weather_ws/xtend.forecast/bin"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="run xtend.forecast.server.WeatherForecastServer -cp ${workspace_loc:/xtend.forecast}/bin"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="xtend.forecast"/>
 </launchConfiguration>
