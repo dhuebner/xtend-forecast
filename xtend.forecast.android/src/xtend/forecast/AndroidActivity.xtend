@@ -1,5 +1,4 @@
 package xtend.forecast
-
 import android.app.Activity
 import android.graphics.Color
 import android.os.Bundle
@@ -15,6 +14,15 @@ import static android.widget.LinearLayout.*
 
 import static extension xtend.forecast.Library.*
 
+/**
+ * Copyright (c) 2011 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * @author Dennis Huebner - Initial contribution and API
+ */
 class AndroidActivity extends Activity {
 	
 	EditText searchField
@@ -47,9 +55,7 @@ class AndroidActivity extends Activity {
         		]
         	]
         	
-        	row[
-        		label[ infoText = it text = "Enter a city" ]
-        	]
+        	row[ label[ infoText = it text = "Enter a city" ] ]
         	
         	row[
         		image[ weatherImage = it]
@@ -64,8 +70,8 @@ class AndroidActivity extends Activity {
         	]
         	
         	row[
-        		windImage = image[ imageDrawable = resources.getDrawable(R$drawable::ic_wind) ]
-        		windText = label[ text = "?km/h - ?" ]
+        		image[ windImage = it imageDrawable = resources.getDrawable(R$drawable::ic_wind) ]
+        		label[ windText = it text = "?km/h - ?" ]
         		backgroundColor = Color::WHITE
         	]
         ]

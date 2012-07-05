@@ -8,6 +8,16 @@ import org.json.JSONObject
 
 import static extension xtend.forecast.Library.*
 
+
+/**
+ * Copyright (c) 2011 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * @author Dennis Huebner - Initial contribution and API
+ */
 class Forecaster {
 	
 	def static forecast(String city) {
@@ -19,7 +29,7 @@ class Forecaster {
 		}
 	}
 	
-	def  forecastFor(String city) {
+	def forecastFor(String city) {
 		val	host = "free.worldweatheronline.com"
 		val path = city.computePath
 		new DefaultHttpClient().execute(

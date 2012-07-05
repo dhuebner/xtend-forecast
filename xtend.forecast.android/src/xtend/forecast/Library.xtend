@@ -25,6 +25,15 @@ import org.json.JSONObject
 import org.json.JSONArray
 
 
+/**
+ * Copyright (c) 2011 itemis AG (http://www.itemis.eu) and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * @author Dennis Huebner - Initial contribution and API
+ */
 class Library {
 	// UI
 	 def static row(ViewGroup view, (LinearLayout)=>void initializer) {
