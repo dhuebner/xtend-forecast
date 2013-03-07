@@ -20,7 +20,6 @@ import java.net.URL
 
 import static android.view.ViewGroup$LayoutParams.*
 import static android.view.animation.Animation.*
-import static xtend.forecast.Library.*
 import org.json.JSONObject
 import org.json.JSONArray
 

@@ -40,7 +40,7 @@ class Forecaster {
 	}
 
 	def private String computePath(String city) {
-		'''/feed/weather.ashx?q=ÇURLEncoder::encode(city)È&format=json&num_of_days=1&key=2351105512140058121706'''
+		'''/feed/weather.ashx?q=Â«URLEncoder::encode(city)Â»&format=json&num_of_days=1&key=2351105512140058121706'''
 	}
 	
 	

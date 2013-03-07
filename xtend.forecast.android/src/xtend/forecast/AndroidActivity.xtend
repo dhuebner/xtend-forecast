@@ -65,7 +65,7 @@ class AndroidActivity extends Activity {
         	
         	row[
         		image[ imageDrawable = resources.getDrawable(R$drawable::ic_temp_2) ]
-        		label[ tempText = it text = "?¡ - ?¡ C" ]
+        		label[ tempText = it text = "?ï¿½ - ?ï¿½ C" ]
         		backgroundColor = Color::WHITE
         	]
         	
@@ -81,7 +81,7 @@ class AndroidActivity extends Activity {
 	def private void loadValues(JSONObject data) {
 		val weather = data.firstEntry("weather")
 		// Info
-		infoText.text = '''Tomorrow in Çdata.firstEntry("request").getString("query")È'''
+		infoText.text = '''Tomorrow in Â«data.firstEntry("request").getString("query")Â»'''
 		// Image
 		val imageUrl = weather.firstEntry("weatherIconUrl").getString("value")
 		weatherImage.setImageDrawable(createDrawable(new URL(imageUrl)))
@@ -89,9 +89,9 @@ class AndroidActivity extends Activity {
 		// Weather
 		forecastText.text =  weather.firstEntry("weatherDesc").getString("value")
 		// Temperature
-		tempText.text = '''Çweather.getString("tempMinC")È¡ - Çweather.getString("tempMaxC")È¡ C'''
+		tempText.text = '''Â«weather.getString("tempMinC")Â» - ï¿½weather.getString("tempMaxC")Â» C'''
 		// Wind
-		windText.text = '''Çweather.getString("windspeedKmph")Èkm/h - Çweather.getString("winddir16Point")È'''
+		windText.text = '''Â«weather.getString("windspeedKmph")Â»km/h - ï¿½weather.getString("winddir16Point")Â»'''
 		windImage.rotate(180 + weather.getInt("winddirDegree"))
 	}
 	
