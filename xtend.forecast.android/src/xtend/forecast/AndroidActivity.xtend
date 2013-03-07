@@ -65,7 +65,7 @@ class AndroidActivity extends Activity {
         	
         	row[
         		image[ imageDrawable = resources.getDrawable(R$drawable::ic_temp_2) ]
-        		label[ tempText = it text = "?� - ?� C" ]
+        		label[ tempText = it text = "?° - ?° C" ]
         		backgroundColor = Color::WHITE
         	]
         	
@@ -89,9 +89,9 @@ class AndroidActivity extends Activity {
 		// Weather
 		forecastText.text =  weather.firstEntry("weatherDesc").getString("value")
 		// Temperature
-		tempText.text = '''«weather.getString("tempMinC")» - �weather.getString("tempMaxC")» C'''
+		tempText.text = '''«weather.getString("tempMinC")» - «weather.getString("tempMaxC")» C'''
 		// Wind
-		windText.text = '''«weather.getString("windspeedKmph")»km/h - �weather.getString("winddir16Point")»'''
+		windText.text = '''«weather.getString("windspeedKmph")»km/h - «weather.getString("winddir16Point")»'''
 		windImage.rotate(180 + weather.getInt("winddirDegree"))
 	}
 	
