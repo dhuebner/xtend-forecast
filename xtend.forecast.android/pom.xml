@@ -9,7 +9,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<xtend.version>2.4.0-SNAPSHOT</xtend.version>
+		<xtend.version>2.4.2-SNAPSHOT</xtend.version>
+		<android-plugin.version>3.5.4-SNAPSHOT</android-plugin.version>
 		<sdkPath>/opt/local/android-sdk-macosx</sdkPath>
 		<platform.version>4.2.2</platform.version>
 		<avd.name>Android_2.1</avd.name>
@@ -36,7 +37,7 @@
 			<plugin>
 				<groupId>org.eclipse.xtend</groupId>
 				<artifactId>xtend-maven-plugin</artifactId>
-				<version>2.4.0-SNAPSHOT</version>
+				<version>${xtend.version}</version>
 				<executions>
 					<execution>
 						<goals>
@@ -55,8 +56,8 @@
 						<debug>true</debug>
 					</run>
 					<sdk>
-						<platform>${platform.version}</platform>
 						<path>${sdkPath}</path>
+						<platform>${platform.version}</platform>
 					</sdk>
 					<emulator>
 						<avd>${avd.name}</avd>
@@ -90,7 +91,7 @@
 				<plugin>
 					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 					<artifactId>android-maven-plugin</artifactId>
-					<version>3.5.1</version>
+					<version>${android-plugin.version}</version>
 					<extensions>true</extensions>
 				</plugin>
 				<plugin>
@@ -104,7 +105,7 @@
 									<pluginExecutionFilter>
 										<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 										<artifactId>android-maven-plugin</artifactId>
-										<versionRange>[3.5.1,)</versionRange>
+										<versionRange>${android-plugin.version}</versionRange>
 										<goals>
 											<goal>generate-sources</goal>
 											<goal>proguard</goal>
@@ -153,8 +154,16 @@
 
 	<pluginRepositories>
 		<pluginRepository>
-			<id>xtend</id>
-			<url>http://build.eclipse.org/common/xtend/maven/</url>
+			<id>oss.sonatype.org-jayway-snapshots</id>
+			<name>Jayway OpenSource SNAPSHOTs on Sonatype.org</name>
+			<url>http://oss.sonatype.org/content/repositories/jayway-snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>sonatype.snapshots</id>
+			<url>http://oss.sonatype.org/content/repositories/snapshots</url>
 		</pluginRepository>
 	</pluginRepositories>
 </project>

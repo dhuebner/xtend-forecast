@@ -8,7 +8,6 @@ import org.json.JSONObject
 
 import static extension xtend.forecast.Library.*
 
-
 /**
  * Copyright (c) 2011 itemis AG (http://www.itemis.eu) and others.
  * All rights reserved. This program and the accompanying materials
@@ -19,7 +18,7 @@ import static extension xtend.forecast.Library.*
  * @author Dennis Huebner - Initial contribution and API
  */
 class Forecaster {
-	
+
 	def static forecast(String city) {
 		val Forecaster instance = new Forecaster()
 		try {
@@ -28,12 +27,13 @@ class Forecaster {
 			instance.forecastFailed(ex)
 		}
 	}
-	
+
 	def forecastFor(String city) {
-		val	host = "free.worldweatheronline.com"
+		val host = "free.worldweatheronline.com"
 		val path = city.computePath
 		new DefaultHttpClient().execute(
-			new HttpGet("http://" + host + path), [
+			new HttpGet("http://" + host + path),
+			[
 				EntityUtils::toString(entity)
 			]
 		)
@@ -42,16 +42,15 @@ class Forecaster {
 	def private String computePath(String city) {
 		'''/feed/weather.ashx?q=«URLEncoder::encode(city)»&format=json&num_of_days=1&key=2351105512140058121706'''
 	}
-	
-	
+
 	def JSONObject forecastFailed(Exception ex) {
 		new JSONObject() => [
-			jsonObj("data")[
+			jsonObj("data") [
 				jsonObj("error") [
-					put("msg","Can get forecast. "+ex?.message)
+					put("msg", "Can get forecast. " + ex?.message)
 				]
 			]
 		]
 	}
-	
+
 }
